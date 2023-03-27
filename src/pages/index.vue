@@ -26,7 +26,7 @@ const rememberMe = ref(false);
 const currentStep = ref(0);
 const title = ref("");
 const width = ref(613);
-const selectedItem = ref("Programming");
+const selectedItem = ref("Portuguese");
 
 const items = ["Portuguese", "Portuguese1", "Portuguese2", "Portuguese23"];
 
@@ -57,10 +57,16 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <VRow no-gutters class="auth-wrapper">
-    <VCol cols="12" lg="12" class="d-flex justify-center mt-12">
+  <VRow no-gutters class="auth-wrapper pb-12">
+    <VCol cols="12" lg="12" class="d-flex justify-center mt-10">
       <div class="d-flex align-center flex-column justify-center">
-        <v-img :width="245" :height="120" contain src="main-logo.png"></v-img>
+        <v-img
+          :width="245"
+          :height="120"
+          contain
+          src="main-logo.png"
+          class="mb-12"
+        ></v-img>
         <p class="title mt-12 mt-sm-0 pt-4 mb-0">
           {{ title }}
         </p>
@@ -234,19 +240,31 @@ onBeforeMount(() => {
               />
             </VCol>
           </VRow>
-          <VRow v-if="currentStep == 4" class="d-flex justify-center">
+          <VRow
+            v-if="currentStep == 4"
+            class="d-flex justify-center align-center"
+          >
             <!-- email -->
-            <VCol cols="6">
-              <h1 class="step-4-title">Aparência do Widget e idioma padrão</h1>
+            <VCol cols="5" class="pe-12 me-6">
+              <h1 class="step-4-title mb-2">
+                Aparência do Widget e idioma padrão
+              </h1>
               <p class="step-4-description">
                 Esta etapa do assistente orienta você pela configuração básica.
                 Você pode alterar o estilo do widget, o idioma padrão e muito
                 mais a qualquer momento por meio das configurações do widget
               </p>
               <p class="step-4-header">Estilo do widget</p>
-              <p class="step-4-theme">Temas prontos</p>
-              <div class="circle">
-                <!-- <img class="inside-icon" src="color-flag.svg" /> -->
+              <p class="step-4-theme mb-0">Temas prontos</p>
+              <div class="circle mt-1 mb-3">
+                <v-img
+                  :width="16"
+                  :height="16"
+                  contain
+                  class="inside-icon"
+                  src="color-flag.svg"
+                ></v-img>
+                <!-- <img " src="" /> -->
               </div>
               <h6 class="step-4-theme">Cores personalizadas</h6>
               <p class="label">Cor primária</p>
@@ -267,7 +285,7 @@ onBeforeMount(() => {
                 <span class="ps-2"> Continuar</span>
               </VBtn>
             </VCol>
-            <VCol cols="4">
+            <VCol cols="3">
               <v-img
                 :width="338"
                 :height="555.5"
@@ -318,6 +336,8 @@ onBeforeMount(() => {
   text-transform: capitalize;
   width: 167px;
   height: 46px;
+  font-size: 16px;
+  font-weight: 500;
 }
 .main-btn-group {
   border: 0.5px solid #cfcfcf;
@@ -343,6 +363,7 @@ onBeforeMount(() => {
   color: #000000;
   cursor: pointer;
   margin: 0px;
+  width: 70px;
 }
 .loading-logo {
   display: flex;
@@ -406,6 +427,7 @@ onBeforeMount(() => {
   height: 16px;
   left: 15px;
   top: 15px;
+  opacity: 0.8;
 }
 </style>
 <route lang="yaml">
