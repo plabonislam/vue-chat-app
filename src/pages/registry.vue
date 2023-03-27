@@ -246,7 +246,7 @@ onBeforeMount(() => {
               <p class="step-4-header">Estilo do widget</p>
               <p class="step-4-theme">Temas prontos</p>
               <div class="circle">
-                <img class="inside-icon" src="color-flag.svg" />
+                <!-- <img class="inside-icon" src="color-flag.svg" /> -->
               </div>
               <h6 class="step-4-theme">Cores personalizadas</h6>
               <p class="label">Cor primária</p>
