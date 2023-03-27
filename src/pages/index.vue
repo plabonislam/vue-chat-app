@@ -20,7 +20,21 @@ const authThemeImg = useGenerateImageVariant(
 );
 const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark);
 const isPasswordVisible = ref(false);
+const companyName = ref("");
+const cnpj = ref("");
+const cep = ref("");
+const managerName = ref("");
+const address = ref("");
+const neighborHood = ref("");
+const city = ref("");
+const state = ref("");
+const number = ref("");
 const email = ref("");
+const responsible = ref("");
+const responsibleEmail = ref("");
+const telephone = ref("");
+const observation = ref("");
+
 const password = ref("");
 const rememberMe = ref(false);
 const currentStep = ref(0);
@@ -80,45 +94,35 @@ onBeforeMount(() => {
             <VCol cols="12">
               <p class="label">Nome da empresa *</p>
               <VTextField
-                v-model="email"
+                v-model="companyName"
                 label="Nome da empresa"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
             <VCol cols="12">
               <p class="label">CNPJ</p>
 
               <VTextField
-                v-model="email"
+                v-model="cnpj"
                 label="CNPJ"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
             <VCol cols="12">
               <p class="label">CEP</p>
-
-              <VTextField
-                v-model="email"
-                label="CEP"
-                type="email"
-                single-line
-                :rules="[requiredValidator, emailValidator]"
-              />
+              <VTextField v-model="cep" label="CEP" type="email" single-line />
             </VCol>
 
             <VCol cols="12">
               <p class="label">Nome do gestor</p>
 
               <VTextField
-                v-model="email"
+                v-model="managerName"
                 label="Nome do gestor"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
           </VRow>
@@ -128,33 +132,30 @@ onBeforeMount(() => {
             <VCol cols="12">
               <p class="label">Endereço</p>
               <VTextField
-                v-model="email"
+                v-model="address"
                 label="Endereço"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
             <VCol cols="12">
               <p class="label">Bairro</p>
 
               <VTextField
-                v-model="email"
+                v-model="neighborHood"
                 label="Bairro"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
             <VCol cols="12">
               <p class="label">Cidade</p>
 
               <VTextField
-                v-model="email"
+                v-model="city"
                 label="Cidade"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
 
@@ -162,22 +163,20 @@ onBeforeMount(() => {
               <p class="label">Estado</p>
 
               <VTextField
-                v-model="email"
+                v-model="state"
                 label="Estado"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
             <VCol cols="12">
               <p class="label">Número</p>
 
               <VTextField
-                v-model="email"
+                v-model="number"
                 label="Número"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
             <VCol cols="12">
@@ -188,7 +187,6 @@ onBeforeMount(() => {
                 label="Complemento"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
           </VRow>
@@ -198,33 +196,30 @@ onBeforeMount(() => {
             <VCol cols="12">
               <p class="label">Responsável</p>
               <VTextField
-                v-model="email"
+                v-model="responsible"
                 label="Nome do responsável"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
             <VCol cols="12">
               <p class="label">Email do Responsável</p>
 
               <VTextField
-                v-model="email"
+                v-model="responsibleEmail"
                 label="Bairro"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
             <VCol cols="12">
               <p class="label">Telefone</p>
 
               <VTextField
-                v-model="email"
+                v-model="telephone"
                 label="Telefone"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
 
@@ -232,11 +227,10 @@ onBeforeMount(() => {
               <p class="label">Observação</p>
 
               <VTextField
-                v-model="email"
+                v-model="observation"
                 label="Observação"
                 type="email"
                 single-line
-                :rules="[requiredValidator, emailValidator]"
               />
             </VCol>
           </VRow>
