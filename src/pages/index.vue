@@ -234,10 +234,7 @@ onBeforeMount(() => {
               />
             </VCol>
           </VRow>
-          <VRow
-            v-if="currentStep == 4"
-            class="d-flex justify-center align-center"
-          >
+          <VRow v-if="currentStep == 4" class="d-flex justify-center">
             <!-- email -->
             <VCol cols="5" class="pe-12 me-6">
               <h1 class="step-4-title mb-2">
@@ -280,12 +277,60 @@ onBeforeMount(() => {
               </VBtn>
             </VCol>
             <VCol cols="3">
-              <v-img
-                :width="338"
-                :height="555.5"
-                contain
-                src="chat-box.png"
-              ></v-img>
+              <div class="upper-mob-wedget">
+                <div class="upper-card">
+                  <div class="pt-8 d-flex justify-space-between icon-header">
+                    <v-img
+                      :height="27"
+                      contain
+                      src="chat-icon-small.png"
+                    ></v-img>
+                    <v-img :width="16" :height="16" contain src="x.png" class="cross"></v-img>
+                  </div>
+                  <p class="chat-box-header mx-8 pt-4 mb-0">
+                    Olá, bem-vindo ao OnCenter Chat 👋
+                  </p>
+                  <p class="chat-box-description mx-8 mb-0 pt-1">
+                    Como podemos te ajudar?
+                  </p>
+                </div>
+                <div class="mid-card">
+                  <div class="conversation-overlay px-5">
+                    <div class="d-flex justify-space-between mt-3 conversation-title ">
+                      <p>Suas conversas</p>
+                      <p>Suas conversas</p>
+                    </div>
+
+                    <v-img
+                      :width="283"
+                      :height="181"
+                      contain
+                      src="conversation-img.svg"
+                    ></v-img>
+                    <div class="nova-conversa">
+                      <VBtn type="submit" class="start-conversa mb-5">
+                        <v-img
+                          :width="12"
+                          :height="12"
+                          contain
+                          src="send.svg"
+                        ></v-img>
+
+                        <span class="ms-1"> Nova conversa</span>
+                      </VBtn>
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom-card ps-4 pt-2 pb-2">
+                  <v-img :width="16" :height="16" src="setting.png"></v-img>
+
+                  <v-img
+                    :width="41"
+                    :height="11"
+                    src="chat-icon-micro.svg"
+                  ></v-img>
+                </div>
+              </div>
             </VCol>
           </VRow>
           <VCardText class="d-flex align-center justify-center pa-0">
@@ -320,6 +365,97 @@ onBeforeMount(() => {
 </style>
 
 <style scoped>
+
+.cross {
+  cursor: pointer;
+}
+.nova-conversa {
+  display: grid;
+  justify-content: center;
+}
+.conversation-overlay {
+  width: 321px;
+  background: #ffffff;
+  box-shadow: 0px 3.22673px 9.68019px rgba(0, 0, 0, 0.25);
+  border-radius: 3.22673px;
+  position: absolute;
+  left: 8.87px;
+  top: -36.38px;
+  flex-direction: column;
+}
+.start-conversa {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8.06682px 17.747px;
+  gap: 6.45px;
+  font-size: 14px;
+
+  font-weight: 500;
+  height: 30.13px;
+  text-transform: capitalize;
+
+  /* 6) Filled Button / Primary: Active */
+
+  background: #5e50ee;
+  border-radius: 37.9141px;
+}
+.conversation-title {
+  font-weight: 400;
+  font-size: 12.9069px;
+  line-height: 16px;
+  /* identical to box height */
+
+  color: #5e5873;
+}
+.icon-header {
+  margin-left: -44px;
+  margin-right: -90px;
+}
+.bottom-card {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+}
+.chat-box-header {
+  font-weight: 500;
+  font-size: 22.5871px;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+.chat-box-description {
+  font-weight: 400;
+  font-size: 12.9069px;
+  line-height: 16px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
+.upper-card {
+  width: 338px;
+  padding-bottom: 70px;
+  left: 0px;
+  top: 0px;
+  border-top-left-radius: 12.9069px;
+  border-top-right-radius: 12.9069px;
+  background: linear-gradient(180deg, #2b6bc2 0%, #8dabd6 100%);
+}
+
+.mid-card {
+  padding: 140px 0px;
+  width: 338px;
+  position: relative;
+}
+.upper-mob-wedget {
+  width: 338px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12.9069px;
+  display: flex;
+  flex-direction: column;
+}
 .combo {
   width: 350px;
   font-weight: 400;
